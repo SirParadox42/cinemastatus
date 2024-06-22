@@ -13,7 +13,7 @@ export default function Ranking(props) {
 
     const handleView = () => navigation.navigate('Ranking', {rankingId: props.id});
     const handleEdit = () => navigation.navigate('Update Ranking', {rankingId: props.id, seriesId: props.series.id});
-    const handleDelete = () => Alert.alert('Deleting Ranking', `Are you sure you want to delete ${props.title}?`, [{text: 'No', style: 'cancel'}, {text: 'Yes', onPress: () => props.onDelete(), style: 'destructive'}]);
+    const handleDelete = () => Alert.alert('Deleting Ranking', `Are you sure you want to delete ${props.title}?`, [{text: 'No', style: 'cancel'}, {text: 'Yes', onPress: props.onDelete, style: 'destructive'}]);
 
     useEffect(() => {
         const dataSetter = () => {
