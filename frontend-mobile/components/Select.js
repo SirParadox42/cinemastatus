@@ -7,9 +7,7 @@ export default function Select(props) {
     const [input, valid, handleChange, handleBlur, handleSubmit, invalid, setInput] = useInput(input => input.length > 0 && props.ranking.filter(ranking => ranking.title === input).length < 2);
     const handleSelectChange = input => input === null || input === 'null' ? handleChange('') : handleChange(input);
 
-    useEffect(() => {
-        props.onSelect(props.i, input, input.length > 0 ? props.movies.find(movie => movie.title === input).image : '', valid, handleSubmit)
-    }, [input]);
+    useEffect(() => props.onSelect(props.i, input, input.length > 0 ? props.movies.find(movie => movie.title === input).image : '', valid, handleSubmit), [input]);
     useEffect(() => {
         if (props.title) {
             setInput(props.title);
