@@ -55,7 +55,6 @@ export default function Rankings() {
 
         dataFetcher();
     }, [ranking, searched]);
-
     useEffect(() => {
         const dataFetcher = async() => {
             const response = await sendRequest('series');
