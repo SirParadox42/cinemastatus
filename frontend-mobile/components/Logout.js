@@ -6,7 +6,7 @@ import {context} from '../store/context';
 export default function Logout() {
     const ctx = useContext(context);
 
-    return <Ionicons style={styles.logout} name='exit' size={25} color={'#ffffff'} onPress={ctx.logout}/>;
+    return <Ionicons style={styles.logout} name='exit' size={25} color='#ffffff' onPress={ctx.logout}/>;
 }
 
 const styles = StyleSheet.create({
